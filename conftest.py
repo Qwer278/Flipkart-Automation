@@ -10,4 +10,4 @@ def initiate_driver():
     driver.get("https://www.flipkart.com/")
     driver.maximize_window()
     yield driver
-    driver.close()
+    driver.quit()
