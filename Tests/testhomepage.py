@@ -7,15 +7,15 @@ from Utilities.LoginUtility import *
 @pytest.mark.usefixtures("initiate_driver")
 class TestHomePage:
 
-    def test_logout_account(self):
-        Find = Util()
-        LoginUtility().perform_login_with(username, password)
-        Find.move_to(profile).perform()
-        Find.wait_for(logout)
-        Find.click_on(logout)
-        Find.wait_for(profile_login)
-        profile_login_btn = Find.find(profile_login)
-        assert profile_login_btn.text == 'Login', 'Working for correct phone and correct password'
+    # def test_logout_account(self):
+    #     Find = Util()
+    #     LoginUtility().perform_login_with(username, password)
+    #     Find.move_to(profile).perform()
+    #     Find.wait_for(logout)
+    #     Find.click_on(logout)
+    #     Find.wait_for(profile_login)
+    #     profile_login_btn = Find.find(profile_login)
+    #     assert profile_login_btn.text == 'Login', 'Working for correct phone and correct password'
 
     # def test_search_box(self):
     #     Find = Util()
@@ -33,13 +33,13 @@ class TestHomePage:
     #     hello_text_on_profile = Find.find(hello_txt)
     #     assert hello_text_on_profile.is_displayed(), "Not Opening Profile"
     #
-    # def test_open_cart(self):
-    #     Find = Util()
-    #     LoginUtility().perform_login_with(username, password)
-    #     Find.wait_for(cart)
-    #     Find.click_on(cart)
-    #     place_order_on_cart_page = Find.find(place_order_btn)
-    #     assert place_order_on_cart_page.is_displayed(), "Cart page not opening"
+    def test_open_cart(self):
+        Find = Util()
+        LoginUtility().perform_login_with(username, password)
+        Find.wait_for(cart)
+        Find.click_on(cart)
+        place_order_on_cart_page = Find.find(place_order_btn)
+        assert place_order_on_cart_page.is_displayed(), "Cart page not opening"
     #
     # def test_select_search_item(self):
     #     Find = Util()
